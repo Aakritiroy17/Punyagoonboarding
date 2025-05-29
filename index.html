@@ -1,0 +1,21 @@
+function doPost(e) {
+  var sheet = SpreadsheetApp.getActiveSheet();
+  var data = JSON.parse(e.postData.contents);
+  sheet.appendRow([
+    new Date(),
+    data.fullname,
+    data.phone,
+    data.email,
+    data.city,
+    data.age,
+    data.gender,
+    data.location,
+    data.languages,
+    data.experience,
+    data.story_types,
+    data.availability,
+    data.slots,
+    data.fee
+  ]);
+  return ContentService.createTextOutput("Success");
+}
